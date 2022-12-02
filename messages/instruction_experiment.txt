@@ -1,1 +1,10 @@
-experiment
+W tym teście będziesz miał do rozwiązania 18 zagadek z ciągami liter. 
+Każdy ciąg jest skonstruowany zgodnie z regułami, które musisz odkryć i zgodnie z nimi uzupełnić kolejną brakującą literę. 
+
+Na przykład:
+A, C, E, G, I, K, ...
+
+W tym przykładzie każda następna litera znajduje się o dwie pozycje w alfabecie dalej. W związku z tym poprawna odpowiedź to M.
+
+Dla ułatwienia masz podgląd na alfabet (nie korzystamy w nim z polskich znaków):
+A   B   C   D   E   F   G   H   I   J   K   L   M   N   O   P   R   S   T   U   W   Y   Z 
