@@ -124,7 +124,7 @@ def block(config, images, block_type, win, fixation, clock, screen_res, answers,
                 show_clock(clock_image, clock, config)
                 show_timer(timer, clock, config)
                 answers_buttons[1].draw()
-                answers_buttons[0].setText(f'{"".join(answer).capitalize()}')
+                answers_buttons[0].setText(f'{"".join(answer)}')
                 answers_buttons[0].draw()
 
                 check_exit()
@@ -136,7 +136,7 @@ def block(config, images, block_type, win, fixation, clock, screen_res, answers,
                 elif len(answer) < config["text_box_max_elem"]:
                     for letter in allowed_keys:
                         if event.getKeys([letter]):
-                            answer += letter
+                            answer += letter.capitalize()
                 else:
                     event.getKeys()
                 win.flip()
@@ -159,6 +159,8 @@ def block(config, images, block_type, win, fixation, clock, screen_res, answers,
         else:
             correct_answer = str(answers.loc[(answers['item_type'] == block_type) &
                                              (answers['item_id'] == trial["image_ID"])]['answer'].iloc[0])
+            if answer:
+                answer = answer[0]
         if answer:
             acc = 1 if answer == correct_answer else 0
         trial_results = {"n": n, "block_type": block_type,
